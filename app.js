@@ -21,7 +21,7 @@ function formatAndSendTweet(event) {
     const formattedEthPrice = formattedUnits * tokenEthPrice;
     const formattedUsdPrice = formattedUnits * tokenUsdPrice;
 
-    const tweetText = `${assetName} was purchased for ${formattedEthPrice}${ethers.constants.EtherSymbol} ($${Number(formattedUsdPrice).toFixed(2)}) #GlueGang #GlueFactoryShow #NFTs ${openseaLink}`;
+    const tweetText = `${assetName} was purchased for ${formattedEthPrice}${ethers.constants.EtherSymbol} ($${Number(formattedUsdPrice).toFixed(2)}) by {to_account} from {from_acount}. #GlueGang #GlueFactoryShow #NFTs ${openseaLink}`;
 
     // @GlueFactoryShow #??? was purchased for X Eth ($X USD) by X from Y.
 // #GlueGang #GlueFactoryShow #NFTs
