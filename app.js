@@ -21,8 +21,11 @@ function formatAndSendTweet(event) {
     const formattedEthPrice = formattedUnits * tokenEthPrice;
     const formattedUsdPrice = formattedUnits * tokenUsdPrice;
 
-    const tweetText = `${assetName} bought for ${formattedEthPrice}${ethers.constants.EtherSymbol} ($${Number(formattedUsdPrice).toFixed(2)}) #NFT ${openseaLink}`;
+    const tweetText = `${assetName} was purchased for ${formattedEthPrice}${ethers.constants.EtherSymbol} ($${Number(formattedUsdPrice).toFixed(2)}) #GlueGang #GlueFactoryShow #NFTs ${openseaLink}`;
 
+    // @GlueFactoryShow #??? was purchased for X Eth ($X USD) by X from Y.
+// #GlueGang #GlueFactoryShow #NFTs
+    
     console.log(tweetText);
 
     // OPTIONAL PREFERENCE - don't tweet out sales below X ETH (default is 1 ETH - change to what you prefer)
