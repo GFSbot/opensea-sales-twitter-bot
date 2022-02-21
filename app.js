@@ -11,8 +11,7 @@ function formatAndSendTweet(event) {
     const assetName = _.get(event, ['asset', 'name'], _.get(event, ['asset_bundle', 'name']));
     const openseaLink = _.get(event, ['asset', 'permalink'], _.get(event, ['asset_bundle', 'permalink']));
     
-    const toAccount = _.get(event, 'from_account');
-    const fromAccount = _.get(event,'to_account');
+    const owner = _.get(event, ['asset', 'owner'], _.get(event, ['asset_bundle', 'owner']));
 
     const totalPrice = _.get(event, 'total_price');
 
@@ -24,7 +23,7 @@ function formatAndSendTweet(event) {
     const formattedEthPrice = formattedUnits * tokenEthPrice;
     const formattedUsdPrice = formattedUnits * tokenUsdPrice;
 
-    const tweetText = `${assetName} was purchased for ${formattedEthPrice}${ethers.constants.EtherSymbol} ($${Number(formattedUsdPrice).toFixed(2)}) by ${toAccount} from ${fromAccount}. #GlueGang #GlueFactoryShow #NFTs ${openseaLink}`;
+    const tweetText = `${assetName} was purchased for ${formattedEthPrice}${ethers.constants.EtherSymbol} ($${Number(formattedUsdPrice).toFixed(2)}) by ${owner}. #GlueGang #GlueFactoryShow #NFTs ${openseaLink}`;
 
     // @GlueFactoryShow #??? was purchased for X Eth ($X USD) by X from Y.
 // #GlueGang #GlueFactoryShow #NFTs
