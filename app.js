@@ -9,8 +9,8 @@ const cache = require('./cache');
 function formatAndSendTweet(event) {
     // Handle both individual items + bundle sales
     const assetName = _.get(event, ['asset', 'name'], _.get(event, ['asset_bundle', 'name']));
-    const toAccount = _.get(event, ['asset', 'to_account']);
-    const fromAccount = _.get(event, ['asset', 'from_account']);
+    const toAccount = _.get(event, ['from_account', 'user']);
+    const fromAccount = _.get(event, ['to_account', 'user']);
     const openseaLink = _.get(event, ['asset', 'permalink'], _.get(event, ['asset_bundle', 'permalink']));
 
     const totalPrice = _.get(event, 'total_price');
