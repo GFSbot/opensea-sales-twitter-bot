@@ -11,8 +11,8 @@ function formatAndSendTweet(event) {
     const assetName = _.get(event, ['asset', 'name'], _.get(event, ['asset_bundle', 'name']));
     const openseaLink = _.get(event, ['asset', 'permalink'], _.get(event, ['asset_bundle', 'permalink']));
     
-    const toAccount = _.get(event, ['to_account', 'account_address']);
-    const fromAccount = _.get(event, ['from_account', 'account_address']);
+    const toAccount = _.get(event, ['to_account', 'name']);
+    const fromAccount = _.get(event, ['from_account', 'name']);
 
     const totalPrice = _.get(event, 'total_price');
 
