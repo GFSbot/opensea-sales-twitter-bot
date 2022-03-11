@@ -57,7 +57,11 @@ setInterval(() => {
         params: {
             collection_slug: process.env.OPENSEA_COLLECTION_SLUG,
             event_type: 'successful',
-            occurred_after: lastSaleTime,
+            asset_events: [],
+            next_page: "https://api.opensea.io/api/v1/events?cursor=cj0xJnA9MjAyMi0wMi0wMiswMiUzQTQ1JTNBMTIuNjQ3MDM2",
+            previous_page: "https://api.opensea.io/api/v1/events?cursor=cD0yMDIyLTAyLTAyKzAxJTNBNDglM0EzNC4xMzE4Nzk%3D",
+}
+
             only_opensea: 'false'
         }
     }).then((response) => {
