@@ -48,7 +48,7 @@ function formatAndSendTweet(event) {
 setInterval(() => {
     const lastSaleTime = cache.get('lastSaleTime', null) || moment().startOf('minute').subtract(59, "seconds").unix();
 
-    console.log(`Last sale (in seconds since Unix epoch): ${cache.get('lastSaleTime', null)}`);
+    console.log(`Last sale (in seconds since Unix epoch): ${cache.get('previous_page', null)}`);
 
     axios.get('https://api.opensea.io/api/v1/events', {
         headers: {
